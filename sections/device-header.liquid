@@ -1,0 +1,186 @@
+<div class="custom-hero hero deviceBG hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+     {% if section.settings.image %}
+     data-bgset="{% include 'bgset', image: section.settings.image %}"
+     data-sizes="auto"
+     data-parent-fit="cover"
+     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+     {% endif %}>
+  {% if section.settings.image == blank %}
+    <div class="placeholder-background">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {% endif %}
+  <div class="hero__inner deviceinner">
+   
+    
+    <div class="page-width text-center">
+      {% if section.settings.title != blank %}
+        <h2 class="h1 mega-title devicepageHeading{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+      {% if section.settings.title2 != blank %}
+        <h2 class="h1 mega-title devicepageHeading{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title2 | escape }}</h2>
+      {% endif %}
+    </div>
+
+   <div class="boxpage-width text-center">
+        <div class="grid grid--flush-bottom text-center devicegrid">
+            <div class="grid__item medium-up--one-third devicebox text-center">
+                <h2 class="h3 deviceheading">Smart Collar</h2>
+                  <div class="feature-row device-row">
+                    <div class="feature-row__item feature-row__text feature-row__text--right">
+                      <p class="devicetext">Features include GPS with safe zone, activity monitor, health monitor and adventure recording</p>
+                    </div>
+
+                    <div class="feature-row__item">
+                        <img class="sideImage" src="https://cdn.shopify.com/s/files/1/2590/2182/files/3-min.png?3139576662575020153" class="feature-row__image lazyautosizes lazyloaded">
+                    </div>
+                  </div>
+
+                 <a href="/pages/buy-now">
+                   <div class="arrow"><img src="https://cdn.shopify.com/s/files/1/2590/2182/files/header_shop_now_icon.svg?4717997859838878766"></div>
+              	 </a>
+
+                  <div class="shopnowtext">
+                    <a href="/pages/buy-now" class="shopnowBtn">
+                      Shop Now
+                    </a>
+                  </div>
+            </div>
+
+            <div class="grid__item medium-up--one-third devicebox text-center" id="middle-device-box">
+                <h2 class="h3 deviceheading" style="color:#ffffff;">Smart Harness</h2>
+                <div class="feature-row device-row">
+                  <div class="feature-row__item feature-row__text feature-row__text--right">
+                    <p class="devicetext" style="color:#ffffff;">If you don't want your pet to wear a collar, no problem, we also provide a smart harness.</p>
+                  </div>
+
+                  <div class="feature-row__item">
+                      <img class="sideImage" src="https://cdn.shopify.com/s/files/1/2590/2182/files/5-min.png?3139576662575020153" class="feature-row__image lazyautosizes lazyloaded">
+                  </div>
+                </div>
+
+         
+                  
+                  <a href="/pages/buy-now">
+                  	<div class="arrow_2"><img src="https://cdn.shopify.com/s/files/1/2590/2182/files/header_shop_now_icon_white.svg?4717997859838878766"></div>
+                  </a>
+                  
+                  <div class="shopnowtext_white">
+                    <a href="/pages/buy-now" class="shopnowBtn">
+                      Shop Now
+                    </a>
+                  </div>
+            
+            </div>
+
+            <div class="grid__item medium-up--one-third devicebox text-center">
+                  <h2 class="h3 deviceheading">Charging Station</h2>
+                  <div class="feature-row device-row">
+                    <div class="feature-row__item feature-row__text feature-row__text--right">
+                      <p class="devicetext">This is included in every package and comes with a USB cable to charge your tracking unit </p>
+                    </div>
+
+                    <div class="feature-row__item">
+                        <img class="sideImage" src="https://cdn.shopify.com/s/files/1/2590/2182/files/device-chargingStation-5x-min.png?3139576662575020153">
+                    </div>
+                  </div>
+                 
+              	  <a href="/pages/buy-now">
+              	 	 <div class="arrow"><img src="https://cdn.shopify.com/s/files/1/2590/2182/files/header_shop_now_icon.svg?4717997859838878766"></div>
+              	  </a>
+                  <div class="shopnowtext">
+                    <a href="/pages/buy-now" class="shopnowBtn">
+                      Learn More
+                    </a>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+{% schema %}
+  {
+    "name": "Custom Hero",
+    "class": "index-section index-section--flush",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Image alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "PawTrails Smart Collar/Harness"
+      },
+      {
+        "type": "text",
+        "id": "title2",
+        "label": "Second Heading",
+        "default": "The answer to all your pet related problems"
+      },
+      {
+        "type": "select",
+        "id": "hero_size",
+        "label": "Section height",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Extra Small",
+            "value": "x-small"
+          },
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          },
+          {
+            "label": "Extra Large",
+            "value": "x-large"
+          }
+        ]
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Custom Device header",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

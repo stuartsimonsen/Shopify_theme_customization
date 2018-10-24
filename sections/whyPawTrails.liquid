@@ -1,0 +1,373 @@
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #d4143d;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timebox {
+    padding: 0px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timebox::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -8px;
+    background-color: white;
+    border: 2px solid  #d4143d;
+    top: 30px; /*to move the time circle in the middle of the content box*/
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -12px;
+}
+
+/* The actual content */
+.timetext {
+    padding: 5px 30px;
+    position: relative;
+}
+  
+ 
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .timebox {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .timebox::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 19px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  } 
+}
+  
+  /***css for icon and text on the same row*/
+  	 
+  /**css style for icon and text side by side**/
+  
+    .why_div {
+      padding:2px 0;
+    }
+
+    .why_div .icon_div {
+      display: inline-block;
+      margin-left: 15px;
+      vertical-align:middle;
+    }
+
+    .why_div .icon_div span i {
+      font-size: 24px;
+    }
+
+    .why_div .text_div {
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+      text-align:left;
+    }
+
+    .why_div .text_div h3 {
+      color: #d4143d;
+      font-size: 14px;
+    }
+
+    .why_div .text_div span+span {
+      color: #747F85;
+      font-size: 11px;
+    }
+  
+  	.redtext{
+     color: #d4143d;
+    }
+  	
+  
+  #securemonitor{
+   	margin-bottom:8em; 
+  }
+  
+  
+  .mobile_only_icon{
+   	display:none; 
+    margin-bottom:2em;
+    margin-top:-2em;
+  }
+
+  
+  
+</style>
+
+
+<div class="page-width" id="securemonitor">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2 class="h3 sectionHeader">{{ section.settings.title | escape }}</h2>
+      <p>The NEW PawTrails is more than just a GPS tracker, it’s an all in one solution combining both a smart harness and a collar.</p>
+      
+      
+    </div>
+
+  {% endif %}
+
+    <div class="grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %} grid--flush-bottom">
+        {%- assign grid_item_width = 'medium-up--one-third' -%}
+        {%- assign max_height = 345 -%}
+    		
+            <div class="timeline">
+              <div class="timebox left">
+                <div class="timetext text-right">
+                  <div class="why_div">
+                   	
+                    <div class="text_div">
+                      <h3 class="h4 feature_title redtext">Live Tracking and Safe Zones</h3> 
+                    </div>
+                    
+                    <div class="icon_div">
+                      <span><img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/red_track.svg?13382093699394843871"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="rte-setting feature_text">
+                   Give yourself peace of mind knowing the live location of your dog. Set up a Safe Zone…and if your dog strays…The App lets you know!
+                  </div>
+                </div>
+              </div>
+              <div class="timebox right">
+                <div class="timetext text-left">
+                   	 <div class="why_div">
+                        
+                       <div class="icon_div">
+                        <span><img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/activity.svg?9822780544740950477"></span>
+                      </div>
+                        <div class="text_div">
+                          <h3 class="h4 feature_title redtext">Activity Monitor</h3> 
+                        </div>
+                     
+                    </div>
+
+                    <div class="rte-setting feature_text">
+                   		Keep an eye on your pet’s activity levels throughout the day, even while you are away to find out what they’re up to.
+                    </div>
+                </div>
+              </div>
+              
+              <div class="timebox left ">
+                <div class="timetext text-right">
+                     <div class="why_div">
+                      <div class="text_div">
+                        <h3 class="h4 feature_title redtext">Adventure Recording</h3> 
+                      </div>
+                       
+                      <div class="icon_div">
+                        <span><img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/adventure.svg?15363972923965674073"></span>
+                      </div>
+                      
+                    </div>
+                  
+                    <div class="rte-setting feature_text">
+                   Go on adventures with your dog and track their progress! Share on social media to let your friends and family know what you’re up to.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timebox right">
+                <div class="timetext text-left">
+                    <div class="why_div">
+                        
+                         <div class="icon_div">
+                          <span><img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/health_advisor.svg?9822780544740950477"></span>
+                        </div>
+                       	<div class="text_div">
+                          <h3 class="h4 feature_title redtext">Health Advisor</h3> 
+                        </div>
+
+                    </div>
+
+                    <div class="rte-setting feature_text">
+                     Monitor and get familiar with your pet’s weight. You are also provided with professional tips and advice.  
+                    </div>
+                </div>
+              </div>
+            </div>          
+     </div>
+
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Why PawTrails",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "What is PawTrails’ all in one Solution?"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centered"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Add a title or tagline"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>The NEW PawTrails is more than just a GPS tracker, it’s an all in one solution combining both a smart harness and a collar.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Why PawTrails",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+

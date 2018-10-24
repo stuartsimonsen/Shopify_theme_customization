@@ -1,0 +1,33 @@
+
+<!-- /templates/page.newtemplate.liquid -->
+
+<style>
+	body { background: url({{ 'background.png' | asset_url }}); !important; }
+	#shopify-section-header{
+     display:none; 
+    }
+  	
+  	#shopify-section-footer{
+     display:none; 
+  	}
+</style>
+ {% if page.handle == 'subscribe-to-win-10-pawtrails-voucher' %}
+<!-- 	$('header').remove(); 
+	$('footer').remove(); -->
+{% endif %} 
+
+
+ {{ 'newtemplate.scss'         | asset_url | stylesheet_tag }}  
+
+
+  <div class="page-width page_custom_padding">
+    <div class="grid">
+      <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+     
+
+        <div class="rte">
+         {% section 'Wallow-newsletter' %}
+        </div>
+      </div>
+    </div>
+  </div>

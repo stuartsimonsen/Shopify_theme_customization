@@ -1,0 +1,69 @@
+{% section 'banner_lefttext' %}
+ 
+
+<div class="page-width WebtoleadForm">
+     <div class="page-width grid grid__item medium-up--two-thirds">
+          {% if page.content.size > 0 %}
+            <div class="rte">
+              {{ page.content }}
+            </div>
+          {% endif %}
+
+          <div class="contact-form form-vertical">
+               
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+              <input type=hidden name="retURL" value="https://pawtrails.com/pages/thank-you-page">
+          
+              <input type=hidden name='captcha_settings' value='{"keyname":"PawTrailsShopify","fallback":"true","orgId":"00D0O000000svq4","ts":""}'>
+             
+              <input type=hidden name="oid" value="00D0O000000svq4">
+              
+             
+              <label for="first_name">First Name <span class="required_icon">*</span></label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" required/><br>
+              <label for="last_name">Last Name <span class="required_icon">*</span></label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required/><br>
+              <label for="email">Email <span class="required_icon">*</span></label><input  id="email" maxlength="80" name="email" size="20" type="text" required /><br>
+              <label for="phone">Phone <span class="required_icon">*</span></label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+              <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+             
+            How did you hear about us? 
+              <select  id="00N0O00000EmXQw" name="00N0O00000EmXQw" title="Lead Source">
+                <option value="">--None--</option><option value="Newspaper">Newspaper</option>
+                <option value="Google Ads">Google Ads</option>
+                <option value="Events">Events</option>
+                <option value="Social media">Social media</option>
+                <option value="Radio">Radio</option>
+                <option value="Word of Mouth">Word of Mouth</option>
+                <option value="Blog">Blog</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Newsletter">Newsletter</option>
+                <option value="Other">Other</option>
+              </select><br>
+              Description: <span class="required_icon">*</span><textarea  id="00N0O00000EmmXJ" name="00N0O00000EmmXJ" type="text" wrap="soft" required></textarea><br>
+              <div class="g-recaptcha" data-sitekey="6LcC22cUAAAAAFaJVmJ0GcK_5DhMQ7pPjA7_vobE"></div><br>  
+              <input type="submit" name="submit">
+            </form> 
+          </div>
+      </div>
+  
+   	   <div class="page-width grid grid__item medium-up--one-third">
+		<div class="et_pb_text_inner">
+          <h3>More Info</h3>
+          <p>Start to connect with us</p>
+          <h6>Address</h6>
+          <p>Unit 12A South Ring Business Park, Kinsale Road,<br> Cork,Ireland</p>
+          <h6>Phone</h6>
+          <p>Ireland :  00353 21 432 1699<br>
+          UK : 0044 203 026 3215</p>
+          <h6>Email</h6>
+          <p>info@pawtrails.com</p>
+          <h6>Business Hours</h6>
+          <p>Monday to Friday, 9AM—5PM (excluding Irish bank holidays)</p>
+        </div>
+      </div>
+</div>
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>

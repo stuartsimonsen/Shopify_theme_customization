@@ -1,0 +1,161 @@
+  <div class="page-width" id="toggleTabs">
+	<ul class="tabs">
+        <li><a class="active" href="#tab1">Descriptions</a></li>
+        <li><a href="#tab2">Size Guide</a></li>
+        <li><a href="#tab3">Specification</a></li>
+        <li><a href="#tab4">Reviews</a></li>
+    </ul>
+    <ul class="tabs-content">
+       <li id="tab1">
+            <div>
+          		<p class="descriptiontext">The NEW PawTrails all in one solution means you have the benefit of having both a harness and a collar. Insights into your pet’s daily life with our FREE easy to use mobile app designed around you and your pet’s needs.  </p>
+          		<h3 class="descriptionTitle">Features</h3>
+     			<h3 class="descriptionTitle">1. Live Tracking & Safe Zones</h3> 
+                <p class="descriptiontext">Allows you to set virtual fences on the apps built in map, that will then notify if your dog leaves and then you can track where your pet has gone using the Live Tracking screen.</p>
+               
+              	<h3 class="descriptionTitle">2. Monitors Activity</h3> 
+             	<p class="descriptiontext"> Tracks your pet’s activity levels to see how much exercise they are getting throughout the day. This is also a great way of seeing any irregular movement or changes in behaviour to keep an eye on your pet when you are away.</p>
+                
+              	<h3 class="descriptionTitle">3. Adventure Recording</h3> 
+                <p class="descriptiontext"> When you are heading out for a walk with your dog start an Adventure and record your trip. When you’re finished you can see a summary of how well your pet performed.</p>
+                
+                <h3 class="descriptionTitle">4. Health Advisor</h3> 
+                <p class="descriptiontext">Keep your pets’ weight in check with PawTrails and measure improvements by assessing your pet regularly in the app. </p>
+      			
+      			<h3 class="descriptionTitle"> What to know more? </h3>
+                  <p class="descriptiontext"> <a href="/pages/contact">Contact us</a> today we would love to hear from you.</p>
+          	</div>
+        </li>
+      
+        <li id="tab2">      
+              <p class="descriptiontext">PawTrails is interchangeable between a collar and harness.</p>
+         	    <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/NewTechSpec.png?1369081087189171318"> 
+        </li>
+       
+      <li id="tab3">
+            <div>
+          		
+                <h3 class="descriptionTitle">Overview</h3>
+     		
+                <p class="descriptiontext">• Waterproof and durable to suit all types of terrain</p>
+
+             	<p class="descriptiontext">• Secure Software to keep your information safe </p>
+				<p class="descriptiontext">• The PawTrails app is FREE to download on iOS and Android smartphones</p>
+     
+              	<h3 class="descriptionTitle">Battery</h3> 
+                <p class="descriptiontext"> •	3 days – may vary depending on use</p>
+                
+                <h3 class="descriptionTitle">SIM</h3> 
+                <p class="descriptiontext">• Integrated sim card which sends your pets location to your PawTrails app</p>
+      			
+      			 <p class="descriptiontext"> •	Check out service fees <a id="serviceText" href="/pages/service-fee">here.</a></p>
+          	</div>    
+        </li>
+      	
+          <li id="tab4" class="active">
+              <div class="yotpo yotpo-main-widget" 
+               data-product-id="{{ product.id }}"
+               data-price="{{ variant.price | money_without_currency }}"
+               data-currency="{{ shop.currency }}" 
+               data-name="{{ product.title | escape }}" 
+               data-url="{{ shop.url }}{{ product.url }}" 
+               data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+               data-description="{{ product.description | escape }}"> 
+              </div>
+        </li> 
+      
+    </ul>
+  </div>
+
+
+<style>
+ 
+  #serviceText{
+   color:#419df1;
+  }
+  
+  #toggleTabs{
+  	margin-top:5em;
+    margin-bottom:5em;
+  }
+  
+  .descriptionTitle{
+    font-size:18px;
+   
+  }
+  
+  .descriptiontext{
+    font-size:14px;
+    color:#232527;
+  }
+  
+ul.tabs {
+  border-bottom: 1px solid #DDDDDD;
+  display: block;
+  margin: 0 0 20px;
+  padding: 0;
+}
+ul.tabs li {
+  display: block;
+  float: left;
+  height: 30px;
+  margin-bottom: 0;
+  padding: 0;
+  width: 150px;
+}
+ul.tabs li a {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 #F5F5F5;
+  border-color: #DDDDDD !important;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  display: block;
+  font-size: 16px;
+  font-weight:520;
+  height: 32px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0 30px;
+  text-decoration: none;
+  width: auto;
+  color: #303030;
+  border-bottom:none !important;
+}
+ul.tabs li a.active {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-left-width: 1px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #111111;
+  height: 35px;
+  margin: 0 0 0 -1px;
+  padding-top: 4px;
+  position: relative;
+  top: -4px;
+}
+ul.tabs li:first-child a.active {
+  margin-left: 0;
+}
+ul.tabs li:first-child a {
+  border-top-left-radius: 2px;
+  border-width: 1px 1px 0;
+}
+ul.tabs li:last-child a {
+  border-top-right-radius: 2px;
+}
+ul.tabs:before, ul.tabs:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+ul.tabs:after {
+  clear: both;
+}
+</style>

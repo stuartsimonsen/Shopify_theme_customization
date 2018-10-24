@@ -1,0 +1,213 @@
+<div class="page-width rich-text" id="record">
+    <div class="grid">
+        <div class="grid__item medium-up--two-thirds medium-up--push-one-sixth">
+            {% if section.settings.section_title != blank %}
+                <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+                    <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="page-width feature-row">
+
+  {% capture image_layout %}
+    <div class="feature-row__item">
+    
+        {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
+        {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
+        {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {% include 'image-style' with image: section.settings.image, width: 545, height: 545, small_style: true, wrapper_id: wrapper_id, img_id: img_id %}
+        <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
+          <div style="padding-top:100%;">
+            <img id="{{ img_id }}"
+                 class="feature-row__image lazyload"
+                src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Mockup-03.svg?9141071230543830454"
+                 alt="{{ section.settings.image.alt | escape }}">
+          </div>
+        </div>
+
+        <noscript>
+          {{ section.settings.image | img_url: '600x600', scale: 2 | img_tag: section.settings.image.alt, 'feature-row__image' }}
+        </noscript>
+     
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+        <div class="feature-box">
+
+            <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/adventure-icon.svg?5368647573219007911">
+
+            <div class="rightText">
+              {% if section.settings.title != blank %}
+                <h2 class="h4 feature_title">{{ section.settings.title | escape }}</h2>
+              {% endif %}
+              {% if section.settings.text != blank %}
+                <div class="rte-setting featured-row__subtext feature_text">{{ section.settings.text }}</div>
+              {% endif %}
+            </div>
+
+        </div>
+
+         <div class="feature-box second-feature">
+                <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/sharing-icon.svg?5368647573219007911">
+
+                <div class="rightText">
+                  {% if section.settings.title != blank %}
+                    <h2 class="h4 feature_title">{{ section.settings.title2 | escape }}</h2>
+                  {% endif %}
+                  {% if section.settings.text != blank %}
+                    <div class="rte-setting featured-row__subtext feature_text">{{ section.settings.text2 }}</div>
+                  {% endif %}
+                </div>
+        </div>
+
+         <div class="feature-box second-feature">
+                <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/comparing-icon.svg?5368647573219007911">
+
+                <div class="rightText">
+                  {% if section.settings.title != blank %}
+                    <h2 class="h4 feature_title">{{ section.settings.title3 | escape }}</h2>
+                  {% endif %}
+                  {% if section.settings.text != blank %}
+                    <div class="rte-setting featured-row__subtext feature_text">{{ section.settings.text3 }}</div>
+                  {% endif %}
+                </div>
+        </div>
+
+         <div class="feature-row__item feature_two_button app_download">
+                <a href="https://itunes.apple.com/ie/app/pawtrails/id1321502523?mt=8" class="ios-img">
+                   <img class="ios_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Apple_Logo.svg?10721539510743567621">
+                </a>
+                 <a href="https://play.google.com/store/apps/details?id=com.attitudetech.pawtrails&hl=en" class="android-img">
+                    <img class="android_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Android_Logo.svg?10721539510743567621">
+                </a>
+        </div>
+
+     
+      	
+       	<div class="customcenter" style="margin-top:3em;margin-bottom:3em;">
+          <a style="color:#d4143d!important;" href="/products/newpawTrails">
+            <div class="btn" id="call-to-action">
+              Buy Now
+            </div>
+          </a>
+    	</div>
+      
+    </div>
+
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PawTrails recording",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+       {
+        "type": "image_picker",
+        "id": "feature-icon",
+        "label": "Feature Icon"
+      },
+       { "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "recording"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Adventures"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+       {
+        "type": "text",
+        "id": "title2",
+        "label": "Heading2",
+        "default": "Sharing"
+      },
+      {
+        "type": "richtext",
+        "id": "text2",
+        "label": "Text2",
+        "default": "<p>Ever worried about the weight of your pet? Through the PawTrails app you can now determine if  your dog is overweight, underweight or the ideal weight. This info was also gathered from Mr. Keane.</p>"
+      },
+        {
+        "type": "text",
+        "id": "title3",
+        "label": "Heading3",
+        "default": "Sharing"
+      },
+      {
+        "type": "richtext",
+        "id": "text3",
+        "label": "Text3",
+        "default": "<p>Ever worried about the weight of your pet? Through the PawTrails app you can now determine if  your dog is overweight, underweight or the ideal weight. This info was also gathered from Mr. Keane.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+       {
+        "type": "text",
+        "id": "button_label2",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link2",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "app recording",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

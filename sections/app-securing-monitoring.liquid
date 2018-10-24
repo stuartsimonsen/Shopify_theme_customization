@@ -1,0 +1,194 @@
+<div class="page-width" id="securemonitor">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2 class="h3 sectionHeader">{{ section.settings.title | escape }}</h2>
+       <div class="secure_download_btn">
+            <a href="https://itunes.apple.com/ie/app/pawtrails/id1321502523?mt=8" class="ios-img">
+               <img class="ios_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Apple_Logo.svg?14201059082673333016">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.attitudetech.pawtrails&hl=en" class="android-img">
+                <img class="android_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Android_Logo.svg?14201059082673333016">
+            </a>
+        </div>
+	
+       	<div class="feature-row__item feature_two_button">
+      	  <a id="totop1" style="color:#d4143d!important;" href="#scroll-here">
+            <div class="btn app_buynow first_btn">
+               Download App
+            </div>
+          </a>
+
+           <a style="color:#d4143d!important;" href="/pages/buy-now">
+            <div class="btn app_buynow">
+              Pre-Order Now
+            </div>
+          </a>
+    	</div>
+    </div>
+
+  {% endif %}
+
+    <div class="grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %} grid--flush-bottom">
+        {%- assign grid_item_width = 'medium-up--one-third' -%}
+        {%- assign max_height = 345 -%}
+    
+          <div class="grid__item medium-up--one-third text-right">
+            <div class="">
+                <img class="rightIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/realtimeNEW.svg?7114631229609588552">
+                <h3 class="h4 feature_title text-right">Real Time GPS Tracker</h3>
+                <div class="rte-setting feature_text text-right">
+                    Your pet will always be secure with our PawTrails app, as you will always know their real time location
+                </div>
+            </div> 
+            
+            <div class="activityIcon">
+                <img class="rightIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/activity-icon.svg?14904779145888844656">
+                <h3 class="h4 feature_title text-right">Activity Monitor</h3>
+                <div class="rte-setting feature_text text-right">
+                    The PawTrails app monitors your pets’ activity – it will show you how often they are chilling, wandering or being lively within the time period you are interested in.
+                </div>
+            </div>    
+          </div>
+          
+           <div class="grid__item medium-up--one-third text-center">
+                <img class="middleImage" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/safezone_mockup.png?9665619986688865612">
+           </div>
+          
+           <div class="grid__item medium-up--one-third text-left">
+                 <div class="">
+                    <img class="rightIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/safezone-iconNew.svg?17824608249916817846">
+                    <h3 class="h4 feature_title">Safe Zones</h3>
+                    <div class="rte-setting feature_text">
+                      A safe zone is a virtual fence around a specific area like your home or a friend's house and through the app you will be notified if your pet leaves the zone.
+                   </div>
+                </div>    
+                
+                <div class="awarenessIcon">
+                    <img class="rightIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/awareness-icon.svg?12005915624190651065">
+                    <h3 class="h4  feature_title">Awareness</h3>
+                    <div class="rte-setting feature_text">
+                        The application enables you to notice any changes in your pet’s activity over time and allows you to show the information to your vet.
+                    </div>
+                </div> 
+             	
+                <div class="awarenessIcon">
+                    <img class="rightIcon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/awareness-icon.svg?12005915624190651065">
+                    <h3 class="h4  feature_title">Live Updates</h3>
+                    <div class="rte-setting feature_text">
+                         Your pets’ position on the app updates every 3 seconds when they are they are on the move, making sure you can stay hot on their heels.
+                    </div>
+                </div> 
+          </div>
+    </div>
+
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Securing & Monitoring",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Securing & Monitoring"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centered"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Add a title or tagline"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Securing & Monitoring",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+<script>// <![CDATA[
+$('a[href*=#]:not([href=#])').click(function() {
+if (location.pathname.replace(/^//,'') == this.pathname.replace(/^//,'')
+|| location.hostname == this.hostname) {
+
+var target = $(this.hash);
+target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+if (target.length) {
+$('html,body').animate({
+scrollTop: target.offset().top
+}, 2000);
+return false;
+}
+}
+});
+// ]]></script>

@@ -1,0 +1,107 @@
+<div class="page-width">
+
+    <div class="section-header text-center">
+      <h2 class="h3" id="retailer_heading">PawTrails Authorised Retailers</h2>
+    </div>
+  
+    <div id="retailer-section">
+      <a style="color:#d4143d!important;" href="/pages/retailers-contact">
+        <div class="btn retailer_btn">
+          Become a Retailer
+        </div>
+      </a>
+
+      <a style="color:#d4143d!important;" href="/pages/store-locator">
+        <div class="btn retailer_btn">
+         Store Locator
+        </div>
+      </a>
+    </div>
+
+
+	<div class="logo-bar">    
+        <div class="logo-bar__item">
+          <a href="http://www.irps.ie/"><img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Irish_Rosettes.svg?7431546654007728598" alt="" class="logo-bar__image"></a> 
+        </div>
+      
+        <div class="logo-bar__item">
+          <a href="http://www.college-farm.co.uk/main/index.php?option=com_content&task=view&id=9&Itemid=12">
+            <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/College_Farm.svg?7431546654007728598" alt="" class="logo-bar__image">
+          </a>
+        </div>
+      
+        <div class="logo-bar__item">
+          <a href="https://www.facebook.com/petmasternewross/">  
+          	<img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Pet_Master.svg?7431546654007728598" alt="" class="logo-bar__image">
+          </a>
+        </div>
+      
+        <div class="logo-bar__item">
+          <a href="https://www.searchandsell.ie/petzown/product/dogzown/">
+            <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Petzown_Logo.svg?7431546654007728598" alt="" class="logo-bar__image">
+          </a>
+        </div>
+      
+        <div class="logo-bar__item">
+          <a href="https://www.fetchyourpetneeds.ie/">
+            <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Fetch_your_Pets_Needs.svg?7431546654007728598" alt="" class="logo-bar__image"> 
+          </a>
+        </div>
+    </div>
+ </div>
+
+
+{% schema %}
+  {
+    "name": "SVG Retailer section",
+    "class": "index-section",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Logo list"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link",
+            "info": "Optional"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "SVG Retailer section",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "logo_image"
+          },
+          {
+            "type": "logo_image"
+          },
+          {
+            "type": "logo_image"
+          },
+          {
+            "type": "logo_image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

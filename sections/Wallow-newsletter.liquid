@@ -1,0 +1,181 @@
+<div class="newsletter-section{% if section.settings.show_background %} index-section--newsletter-background{% endif %}">
+  <div class="page-width text-center">
+    <div class="voucherbox">
+   	 <div class="section-header text-center">
+    
+      <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/wesite-logo.svg?13862227190105149412" style="width:230px;">
+
+        <label id="vouchertitle">Receive FREE E-brochure Now</label>
+      
+      {% if section.settings.subheading != blank %}
+        <p id="vouchertext">Keep updated with PawTrails News</p>
+      {% endif %}
+    </div>
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+        <a target="_top"  alt="sign up"  href="/pages/subscribe-to-win-10-pawtrails-voucher">Return</a>	
+      	<br>
+     	<br> 
+      {% else %}
+        <div class="input-group password__input-group">
+         
+          <span class="input-group__btn people_icon">
+          	<img id="people_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/email_ic.png?17946833163969036089">
+          </span>
+          
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email"
+            name="contact[email]"
+            id="Email"
+            class="input-group__field newsletter__input"
+            value="{% if customer %}{{ customer.email }}{% endif %}"
+            placeholder="Email"
+            autocorrect="off"
+            autocapitalize="off">          
+        </div>
+       	 
+            <button type="submit" class="newsletter__submit" name="commit" id="signmeButton">
+              <span class="newsletter__submit-text--large signtextcolor">SIGN ME UP</span>
+            </button>
+    
+      {% endif %}
+    {% endform %}
+   
+      
+  	</div>
+  </div>
+</div>
+
+
+<style>
+
+  
+  .index-section--newsletter-background{
+   	 background: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/roundedBG.png?13200362050666401583') center center no-repeat;
+
+	 margin-bottom:70px;  
+     border-radius: 10px;
+     margin-top:1.5em;
+     margin-bottom: 14em;
+  }
+   @media only screen (min-width: 750px){
+      #shopify-section-Wallow-newsletter{
+           border-radius: 10px!important; 
+      }
+   }
+  
+  .section-header h1{
+   display:none; 
+  }
+  
+  /****wallow newsletter page css********/
+	.people_icon{
+  	  width:8%!important; 
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  	
+  	.password__input-group input { text-indent: 32px;}
+  
+  #vouchertitle{
+     font-family: Montserrat;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #282f36;
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+  
+  #vouchertext{
+      font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgba(40, 47, 54, 0.8);
+  }
+
+  
+  #signmeButton{
+      width:340px;
+      height: 50px;
+      border-radius: 24px;
+      background-color: #fa4169;
+      border:none;
+  }
+  
+  .newsletter_submit{
+  	 cursor:none; 
+  }
+  
+   #signmeButton:hover{
+  	background-color:#FB6787
+  }
+  
+  .signtextcolor{
+  	color: #ffffff; 
+  }
+  
+  .index-section--flush:first-child {
+      border-radius: 10px; 
+  }
+
+  #people_icon{
+      width: 150px;
+  }
+  
+  .newsletter__submit{
+    margin-bottom:50px;
+  }
+	
+  .password__input-group {
+  	margin-bottom:30px!important;  
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "class": "index-section index-section--flush",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "id": "show_background",
+        "type": "checkbox",
+        "label": "Show background",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}

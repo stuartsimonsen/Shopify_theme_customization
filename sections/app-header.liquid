@@ -1,0 +1,127 @@
+<a name="scroll-here"></a>
+
+<div class="page-width feature-row appcustompadding">
+  {% capture image_layout %}
+    <div class="feature-row__item">
+
+        {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
+        {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
+        {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {% include 'image-style' with image: section.settings.image, width: 545, height: 545, small_style: true, wrapper_id: wrapper_id, img_id: img_id %}
+        <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
+          <div style="padding-top:90%; margin-top: 110px;">
+            <img id="{{ img_id }}"
+                 class="feature-row__image lazyload"
+                 src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/appStack2.png?9665619986688865612"
+                 alt="{{ section.settings.image.alt | escape }}">
+          </div>
+        </div>
+
+        <noscript>
+          {{ section.settings.image | img_url: '600x600', scale: 2 | img_tag: section.settings.image.alt, 'feature-row__image' }}
+        </noscript>
+
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {% if section.settings.title != blank %}
+        <h2 class="h3 appheading">{{ section.settings.title | escape }}</h2>
+        <h2 class="h3 appheading"> Connects you with your pets</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte-setting featured-row__subtext">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="">
+          <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/App_Store_Badge.svg?5081446454039413751" alt="Apple download">
+        </a>
+      {% endif %}
+
+      {% if section.settings.button_label2 != blank and section.settings.button_link2 != blank %}
+        <a href="{{ section.settings.button_link2 }}" class="">
+           <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/Google_Play_Badge.svg?8188431281916708312" alt="google download">
+
+        </a>
+      {% endif %}
+
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "APP header",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+       {
+        "type": "text",
+        "id": "button_label2",
+        "label": "Button label2"
+      },
+      {
+        "type": "url",
+        "id": "button_link2",
+        "label": "Button link2"
+      }
+    ],
+    "presets": [
+      {
+        "name": "APP header",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

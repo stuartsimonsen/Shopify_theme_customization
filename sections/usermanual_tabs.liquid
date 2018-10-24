@@ -1,0 +1,159 @@
+  <div>
+    <h3 class="sub_header">Downloads</h3>
+    <ul class="tabs">
+          <li><a class="active" href="#tab1">English</a></li>
+          <li><a href="#tab2">French</a></li>
+         
+      </ul>
+    <ul class="tabs-content">
+       <li id="tab1">
+        <div>
+          <ul class="pdf">
+            <li>            
+
+              <a href="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/RetailerBrochure.pdf?11323327866481088440" target="_blank" rel="noopener noreferrer"><img class="pdfimg" align="middle" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/pdficon.png?18419183731297854676"><span>For Retailers</span></a>
+            </li>
+            <li>  
+              <a href="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Customer_e-brochure.pdf?17108260993643065561" target="_blank" rel="noopener noreferrer"><img class="pdfimg" align="middle" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/pdficon.png?18419183731297854676"><span>For Customers</span></a>
+            </li>
+          </ul>
+        </div>
+       </li>
+      
+      
+        <li id="tab2">      
+          <div>
+            <ul class="pdf">
+              <li>            
+
+                <a href="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/B2B_e-brochure-final_-_French_Version.pdf?8801906277099764219" target="_blank" rel="noopener noreferrer"><img class="pdfimg" align="middle" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/pdficon.png?18419183731297854676"><span>Pour les partenaires</span></a>
+              </li>
+              
+            </ul>
+          </div>
+        </li>
+    </ul>
+
+  </div>
+
+	
+
+
+<style>
+  
+  .manual_top{
+   padding-top:3em;
+   padding-bottom:6em;
+  }
+  
+  .tabs-content{
+   	border:1px solid #d9d9d9;
+    padding-top:2em;
+  }
+  
+  .sub_header{
+  	font-size:22px;  
+  } 
+  
+  .pdfimg{
+  	width:50px;
+    vertical-align:middle;
+  }
+  
+  ul.pdf li {
+    list-style-type: none;
+  
+    padding: 8px 36px;
+	}	
+  
+ 
+ul.tabs {
+/*   border-bottom: 1px solid #DDDDDD; */
+  display: block;
+  margin: 0px;
+  padding: 0;
+/*   background-color:#f4f4f4; */
+}
+ul.tabs li {
+  display: block;
+  float: left;
+  height: 30px;
+  margin-bottom: 0;
+  padding: 0;
+
+}
+ul.tabs li a {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 #F5F5F5;
+  border-color: #DDDDDD !important;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  display: block;
+  font-size: 16px;
+  font-weight:520;
+  height: 32px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0 30px;
+  text-decoration: none;
+  width: auto;
+  color: #303030;
+  border-bottom:none !important;
+}
+ul.tabs li a.active {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-left-width: 1px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #111111;
+  margin: 0 0 0 -1px;
+  position: relative;
+}
+ul.tabs li:first-child a.active {
+  margin-left: 0;
+}
+ul.tabs li:first-child a {
+  border-top-left-radius: 2px;
+  border-width: 1px 1px 0;
+}
+ul.tabs li:last-child a {
+  border-top-right-radius: 2px;
+}
+ul.tabs:before, ul.tabs:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+ul.tabs:after {
+  clear: both;
+}
+</style>
+
+<script>
+  $(document).ready(function() {
+    $('ul.tabs').each(function(){
+      var active, content, links = $(this).find('a');
+      active = links.first().addClass('active');
+      content = $(active.attr('href'));
+      links.not(':first').each(function () {
+        $($(this).attr('href')).hide();
+      });
+      $(this).find('a').click(function(e){
+        active.removeClass('active');
+        content.hide();
+        active = $(this);
+        content = $($(this).attr('href'));
+        active.addClass('active');
+        content.show();
+        return false;
+      });
+    });
+  });
+</script>

@@ -1,0 +1,61 @@
+<div class="page-width rich-text">
+    <div class="grid">
+        <div class="grid__item {% unless section.settings.full_width %} medium-up--two-thirds medium-up--push-one-sixth{% endunless %}">
+            {% if section.settings.section_title != blank %}
+                <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+                    <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+                </div>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-center">{{ section.settings.text }}</div>
+            {% endif %}
+        </div>
+    </div>
+  	  
+  		<div class="customcenter" style="margin:45px 0px;">
+          <a style="color:#d4143d!important;" href="/products/newpawTrails">
+            <div class="btn" id="call-to-action">
+              Pre-Order Now
+            </div>
+          </a>
+          <div class="Undertext">
+            <a href="/pages/pawtrails-app"><p style="color:#696969!important;">or</p> Learn more about the PawTrails App</a>
+          </div>
+     	</div>
+  	
+  		
+</div>
+{% schema %}
+{ "name": "Rich text with button", 
+    "class": "index-section", 
+    "settings": 
+    [ 
+        { "type": "checkbox", 
+          "id": "full_width",
+          "label": "Wide display"
+        }, 
+        { "type": "text", 
+          "id": "section_title", 
+          "label": "Heading", 
+          "default": "Talk about your brand" 
+        },
+        { "type": "richtext", 
+          "id": "text",
+          "label": "Text", 
+          "default": "<p>PawTrails Smart Harness is the all in one solution that can be transformed into a collar.</p>" 
+        },
+        
+        { "type": "select", "id": "text_size", 
+          "label": "Size", "default": "medium", 
+          "options": [ 
+                          { "label": "Small", "value": "small" }, 
+                          { "label": "Medium", "value": "medium" }, 
+                          { "label": "Large", "value": "large" } 
+                      ] 
+        } 
+    ],
+    "presets": [ 
+        { "name": "Rich text with button",  "category": "Text" }
+        ] 
+    }
+{% endschema %}

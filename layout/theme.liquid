@@ -1,0 +1,278 @@
+{%- comment %}<locksmith:ba55>{% endcomment -%}
+  {%- include 'locksmith', locksmith_context: 'layout/start' %}{% capture locksmith_source -%}
+{%- comment %}</locksmith:ba55>{% endcomment -%}
+
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+  {% include 'SEOManager' %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  {% capture seo_title %}
+    {{ page_title }}
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  {% endcapture %}
+  <title>{{ seo_title }}</title>
+
+  {% include 'social-meta-tags' %}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+
+  {% include 'google-fonts' %}
+
+  <script>
+    var theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }},
+        addressError: {{ 'sections.map.address_error' | t | json }},
+        addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+        addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+        authError: {{ 'sections.map.auth_error_html' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    }
+
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+
+  <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
+
+  {% if template.directory == 'customers' %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+  {% endif %}
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'lazysizes.min.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
+
+  {{ content_for_header }}
+
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+  
+
+<!--Gem_Page_Header_Script-->
+{% include 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+
+  {% include 'shogun-head' %}
+ 
+{% include 'weglot_hreftags' %}
+
+
+  
+  <!-- Facebook Pixel Code -->
+
+<script>
+
+!function(f,b,e,v,n,t,s)
+
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+n.queue=[];t=b.createElement(e);t.async=!0;
+
+t.src=v;s=b.getElementsByTagName(e)[0];
+
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+
+'https://connect.facebook.net/en_US/fbevents.js');
+
+
+fbq('init', '1992833857598832'); 
+
+fbq('track', 'PageView');
+
+</script>
+
+<noscript>
+
+<img height="1" width="1" 
+
+src="https://www.facebook.com/tr?id=1992833857598832&ev=PageView
+
+&noscript=1"/>
+
+</noscript>
+
+<!-- End Facebook Pixel Code -->
+  
+  <!-- Yotpo Code -->
+  <script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/4k0t79pRUX4uZOw5b9LEgRFfKl4ndRAWVPi9Hx4P/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+  <!-- End of Yotpo Code -->
+
+  <!--code for reCAPTCHA to website -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+{%- include 'bold-common' -%}
+<script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/4k0t79pRUX4uZOw5b9LEgRFfKl4ndRAWVPi9Hx4P/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+
+
+
+  
+
+  
+  
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MHTJ6V7');
+  </script>
+<!-- End Google Tag Manager -->
+   
+  <!-- Google E-commerce  -->
+  
+  <script>
+window.dataLayer = window.dataLayer || []
+dataLayer.push({
+ 'event': 'purchase',
+ 'transactionId': '1234',
+ 'transactionAffiliation': 'PawTrails GPS tracker',
+ 'transactionTotal': 79.99,
+ 'transactionProducts': [{
+   'sku': 'DD44',
+   'name': 'PawTrails GPS tracker',
+   'category': 'Pet',
+   'price': 79.99,
+   'quantity': 1
+ }]
+});
+</script>
+  <!-- End Google E-commerce -->
+  
+
+{% include 'weglot_switcher' %}
+</head>
+
+
+<body class="template-{{ template | split: '.' | first }}">
+  
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHTJ6V7"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  
+ 
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="SearchDrawer" class="search-bar drawer drawer--top">
+    <div class="search-bar__table">
+      <div class="search-bar__table-cell search-bar__form-wrapper">
+        <form class="search search-bar__form" action="/search" method="get" role="search">
+          <button class="search-bar__submit search__submit btn--link" type="submit">
+            {% include 'icon-search' %}
+            <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+          </button>
+          <input class="search__input search-bar__input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+        </form>
+      </div>
+      <div class="search-bar__table-cell text-right">
+        <button type="button" class="btn--link search-bar__close js-drawer-close">
+          {% include 'icon-close' %}
+          <span class="icon__fallback-text">{{ 'general.search.close' | t }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {% section 'header' %}
+  	
+  
+  <!--Floating icon on side bar-->
+	
+       	<ul class="cta_sidebar_sticky">
+			<li id="b2bdemo">
+				<a class="icon_text" href="/pages/useful-documents">  
+                  <img class="bg" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/e-brochure.png?16516164308820503034"> 
+                  <span class="title_short">E-Book</span>   
+              </a>
+			</li>
+			<li id="phone_callback">
+				<a class="icon_text" href="/pages/retailer-demo"> 
+                   <img class="bg" id="bg2" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/contact_form.png?16516164308820503034"> 
+                  <span class="title_short">Retailers</span>
+              </a>
+			</li>
+			<li id="user_instruction">
+				<a class="icon_text" href="/pages/instruction">   
+                   <img class="bg" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/manual_1.png?16516164308820503034"> 
+              	  <span class="title_short">Manual</span>  
+              </a>
+			</li>
+		</ul>
+	
+
+  <div class="page-container" id="PageContainer">
+
+    <main class="main-content" id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+  </div>
+<!--Gem_Page_Footer_Script-->
+{% include 'gem-app-footer-scripts' %}
+  
+  	<script type="text/javascript" src="https://secure.leadforensics.com/js/149402.js" ></script>
+<noscript><img alt="" src="https://secure.leadforensics.com/149402.png" style="display:none;" /></noscript>
+ 
+{%- include 'bold-currency-converter' -%}
+</body>
+</html>
+
+
+<script>
+jQuery(function() {
+  jQuery('.swatch :radio').change(function() {
+    var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+    var optionValue = jQuery(this).val();
+    jQuery(this)
+      .closest('form')
+      .find('.single-option-selector')
+      .eq(optionIndex)
+      .val(optionValue)
+      .trigger('change');
+  });
+});
+</script>
+
+
+{%- comment %}<locksmith:90cc>{% endcomment -%}
+  {%- endcapture %}{% include 'locksmith', locksmith_context: 'layout/end' -%}
+{%- comment %}</locksmith:90cc>{% endcomment -%}

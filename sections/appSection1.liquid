@@ -1,0 +1,234 @@
+<style>
+  @media screen and (min-width: 750px){
+    #FeatureRowImage-appSection1{
+        max-width: 545px;
+        max-height: 563.21202003338897px!important;
+    }
+    #FeatureRowImage-app-controlling{
+        max-width: 545px;
+        max-height: 563.21202003338897px!important;
+    }
+  }
+  
+  /***text for app page last section***/
+   @media screen and (max-width: 750px){
+     #text_mobile_lastsection{
+      margin-top:15em;
+    }
+   }
+</style>
+
+
+
+<div class="page-width" id="securemonitor">
+ 
+    <div class="section-header text-center">
+      <h2 class="h3 sectionHeader">Insights into your pet's daily life</h2>
+       <div class="secure_download_btn">
+            <a href="https://itunes.apple.com/ie/app/pawtrails/id1321502523?mt=8" class="ios-img">
+               <img class="ios_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Apple_Logo.svg?14201059082673333016">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.attitudetech.pawtrails&hl=en" class="android-img">
+                <img class="android_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Android_Logo.svg?14201059082673333016">
+            </a>
+        </div>
+        
+      	<div class="customcenter" style="margin-top:3em;margin-bottom:3em;">
+          <a style="color:#d4143d!important;" href="/products/newpawTrails">
+            <div class="btn" id="call-to-action">
+              Buy Now
+            </div>
+          </a>
+    	</div>
+    
+    </div>
+   </div>
+
+    <div class="page-width feature-row controlSection">
+
+      {% capture image_layout %}
+        <div class="feature-row__item">
+          {% if section.settings.image != blank %}
+            {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
+            {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            {% include 'image-style' with image: section.settings.image, width: 545, height: 545, small_style: true, wrapper_id: wrapper_id, img_id: img_id %}
+            <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
+              <div style="padding-top:150%;">
+                <img id="{{ img_id }}"
+                     class="feature-row__image lazyload"
+                      src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Mockup-01.svg?13011568054139733803"
+                     alt="{{ section.settings.image.alt | escape }}">
+              </div>
+            </div>
+
+            <noscript>
+              {{ section.settings.image | img_url: '600x600', scale: 2 | img_tag: section.settings.image.alt, 'feature-row__image' }}
+            </noscript>
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      {% endcapture %}
+
+      <div class="feature-row">
+        {% if section.settings.layout == 'left' %}
+          {{ image_layout }}
+        {% endif %}
+
+        <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+            <div class="feature-box">
+
+                <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/newrealtime.svg?15676864147588582679">
+
+                <div class="rightText">
+                  {% if section.settings.title != blank %}
+                    <h2 class="h4 feature_title">Real Time GPS Tracker</h2>
+                  {% endif %}
+                  {% if section.settings.text != blank %}
+                    <div class="rte-setting featured-row__subtext feature_text">You will always know your pets real time location</div>
+                  {% endif %}
+                </div>
+
+            </div>
+
+             <div class="feature-box second-feature">
+                    <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/safezoneNEw.svg?9528982883787593408">
+
+                    <div class="rightText">
+                      {% if section.settings.title != blank %}
+                        <h2 class="h4 feature_title">Safe Zones</h2>
+                      {% endif %}
+                      {% if section.settings.text != blank %}
+                        <div class="rte-setting featured-row__subtext feature_text">Set a safe zone and receive a notification if your pet leaves that area. </div>
+                      {% endif %}
+                    </div>
+            </div>
+          
+          	<div class="feature-box second-feature">
+                     <img class="leftIcon" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/placeholder.svg?4941132869224825984">
+
+                    <div class="rightText">
+                      {% if section.settings.title != blank %}
+                        <h2 class="h4 feature_title">Live Updates</h2>
+                      {% endif %}
+                      {% if section.settings.text != blank %}
+                        <div class="rte-setting featured-row__subtext feature_text">Your pets’ position on the app updates every 3 seconds when they are on the move, making sure you can stay hot on their heels.</div>
+                      {% endif %}
+                    </div>
+            </div>
+
+             <div class="feature-row__item feature_two_button app_download">
+                    <a href="#" class="ios-img">
+                       <img class="ios_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Apple_Logo.svg?10149178130701862575">
+                    </a>
+                    <a href="#" class="android-img">
+                        <img class="android_icon" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Android_Logo.svg?10149178130701862575">
+                    </a>
+            </div>
+
+            <div class="customcenter" style="margin-top:3em;margin-bottom:3em;">
+              <a style="color:#d4143d!important;" href="/products/newpawTrails">
+                <div class="btn" id="call-to-action">
+                  Buy Now
+                </div>
+              </a>
+            </div>
+        </div>
+
+
+        {% if section.settings.layout == 'right' %}
+          {{ image_layout }}
+        {% endif %}
+      </div>
+    </div>
+
+{% schema %}
+  {
+    "name": "app section new1",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+       {
+        "type": "image_picker",
+        "id": "feature-icon",
+        "label": "Feature Icon"
+      },
+       { "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Controlling"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Activity Management"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+       {
+        "type": "text",
+        "id": "title2",
+        "label": "Heading2",
+        "default": "Health Management"
+      },
+      {
+        "type": "richtext",
+        "id": "text2",
+        "label": "Text2",
+        "default": "<p>Ever worried about the weight of your pet? Through the PawTrails app you can now determine if  your dog is overweight, underweight or the ideal weight. This info was also gathered from Mr. Keane.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+       {
+        "type": "text",
+        "id": "button_label2",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link2",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "app Controlling",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

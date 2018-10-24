@@ -1,0 +1,176 @@
+
+<div class="page-width">
+	<div class="section-header text-center">
+      <h2 class="h3 sectionHeader">Dogs with PawTrails</h2>
+      <img class="shareImg" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Loudspeaker.svg?1837465129274320300" alt="" class="feature-row__image" />
+      <p class="ShareText">
+        <a class="reviewslink" href="/products/newpawTrails"> Share your review with us</a>
+      </p>
+    </div>
+
+
+	<div class="grid grid--uniform grid--flush-bottom"> 
+   		 <div class="grid__item medium-up--one-half text-center">       
+        	
+                <div class="text-column__content">    
+                  <div class="reviewHeader">
+                    <div class="">
+                      <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Equine-noBG.svg?15548033143540763376" alt="" class="feature-row__image reviewLogo" />
+<!--                       <p class="reviewname">Arra Veterinary Clinic</p> -->
+                    </div>
+                    
+                   <div class="floatText" style="margin-top:10px;">
+                      <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/clock.svg?10012941585848229207" style="display:inline-block;vertical-align:top;" alt="" class="feature-row__image" />
+                      <p style="display:inline-block;vertical-align:top;">
+
+                        13 April 2018
+                      </p>
+                    </div>
+                    
+                    
+                    <div style="clear: both;"></div>
+                    <hr class="review-text-line">
+                  </div>
+                  
+                 <!--this is for the text header and recommend-->
+                  <div class="reviewHeader">	
+                    <p class="recommendheader">
+                    I love the PawTrail
+                    </p> 
+                    <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/recommended.svg?6582632688696413600" alt="" class="feature-row__image recommend" />  
+
+                    <div style="clear: both;"></div>              
+                  </div>
+                  
+                  <div class="rte-setting leftText">
+                    <p>
+                      I love the PawTrail! Knowing that you can track your dog any time of the day or night gives a dog owner complete peace of mind. With the PawTrails, it eliminates the need of guessing what way they have gone, as we can track them on the screen of our mobile phone. The PawTrails would also be ideal for a hunting or over ambitious dog out on a hike - as it is waterproof and can withstand the rough terrain whilst actively tracking their location.
+                    </p></div>
+                </div>
+             
+         </div>
+
+      	<div class="grid__item medium-up--one-half text-center">
+ 
+      			<div class="text-column__content">
+                     <!--this is for the icon and post time-->
+                  	
+                  	  <div class="reviewHeader">	
+                  		 <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Arra_Vets.svg?15548033143540763376"alt="" class="feature-row__image reviewLogo" />  
+                      
+                       <div class="floatText" style="margin-top:10px;">
+                        <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/clock.svg?10012941585848229207" style="display:inline-block;vertical-align:top;" alt="" class="feature-row__image" /> 
+                        <p style="display:inline-block;vertical-align:top;"> 
+                          02 May 2018
+                        </p>
+                       </div>
+                        
+                        <div style="clear: both;"></div>
+                       <hr class="review-text-line">
+                      </div>
+                  	  
+                    <!--this is for the text header and recommend-->
+                  	   <div class="reviewHeader">	
+                          <p class="recommendheader">
+								 I always worry ...
+                         </p> 
+                         <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/recommended.svg?6582632688696413600" alt="" class="feature-row__image recommend" />  
+
+                        <div style="clear: both;"></div>              
+                      </div>
+                  
+                  
+                  	   <div class="rte-setting leftText">
+                         <p> I always worry that milo will get lost on his walks or go missing at home or worse someone would take him! This PawTrails tracker collar gives you a live tracking of where your dog is so you can see it on your phone. Not only that but it informs you when they have left their safe zone that you have set them. It also records all your adventures and how far they’ve walked and how fast they’ve gone..
+                         </p>
+                 	   </div>            
+                    </div>
+             
+         </div>    
+     </div>
+</div>
+
+   
+{% schema %}
+  {
+    "name": "2Reviews PawTrails",
+    "class": "index-section",
+    "settings": [
+   
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centered"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Add a title or tagline"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "2Reviews PawTrails",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

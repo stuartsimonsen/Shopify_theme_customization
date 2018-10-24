@@ -1,0 +1,201 @@
+  <style>
+  /* grid styles ------------------------------------ */
+@media (min-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .info1 {
+     grid-column: span 2;
+     grid-row: span 2;
+  }
+
+  .info2 {
+    grid-column: span 2;
+  }
+
+  .figure1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .figure6 {
+    grid-column: span 2;
+  }
+}
+
+  /***Add lines between text in mobile***/  
+  .border_on_mobile{
+    border-top:1px solid #e6e6e6;
+  }
+
+    
+/**To make the text and image in the center of a div***/
+.gallerybox{
+   display: flex;            /* new */
+  align-items: center;      /* new */
+  justify-content: center;  /* new */
+}
+    
+.figure-img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.info1, .info2 {
+padding: 40px;
+background-color: #ffffff;
+color: white;
+
+ 
+}
+
+.gallerytitle {
+font-size: 1.5em;
+margin-bottom: 1em;
+ color:#000000;
+}
+
+.gallerytext{
+margin-bottom: 1em;
+}
+    
+.texttoright{
+ 	text-align:right!important; 
+}
+    
+.boxcontent{
+   vertical-align:center!important;/**to place text in the center of a div**/
+}
+
+.explore_btn{
+    margin-top: 1em;
+    width: 199.9px;
+    height: 40px;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fbfbfb;
+    border-radius: 50px;
+    border: solid 2px #d4143d;
+    color: #d4143d;
+    padding: 8px;
+}
+    
+    .gallerytext li{
+     color: #788188;
+    }
+
+    
+  </style>
+
+  
+    <main style="border:1px solid #e6e6e6;">
+      <grid-item class="figure6 gallerybox">
+         <img class="figure-img" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/PawTrails-HarnessFeatures-min.png?17269550795449176410" alt="a dog">
+      </grid-item>
+      <grid-item class="info2 gallerybox">
+        <div class="boxcontent">
+          <h2 class="gallerytitle">Features</h2>
+          <p class="gallerytext">PawTrails GPS Smart Harness is designed with your dog’s comfort in mind.<br> Created with soft, padded material and adjustable straps to fit all shapes and sizes.</p>
+          <p class="gallerytext">The GPS device can be easily secured into the device holder, so  you don’t need to <br> worry about it coming off. It features reflective straps to improve <br> the visibility of your pet on dark roads.</p>
+             
+          	 <a style="color:#d4143d!important;" href="/pages/pawtrails-app">
+                <div class="btn explore_btn">
+                 Explore
+                </div>
+              </a>
+        </div>
+
+      </grid-item>
+
+      <grid-item class="info1 gallerybox texttoright border_on_mobile">
+        <div class="boxcontent">
+          <h2 class="gallerytitle">What’s in the Box?</h2>
+          <p class="gallerytext">Everything you need is included in your PawTrails box. </p>
+          <ul class="gallerytext">
+            <li>• Smart Harness</li>
+            <li>• Smart Collar</li>
+            <li>• Waterproof Tracking Unit</li>
+            <li>• Charging Station</li>
+            <li>• Charging Cable</li>
+           	<li>• Device Holder</li>
+          </ul>
+          
+          	 <a style="color:#d4143d!important;" href="/pages/pawtrails-device">
+                <div class="btn explore_btn">
+                 Explore
+                </div>
+              </a>
+          		
+ 		</div>
+        
+<!--         <a href="#" class="info-link">Learn more...</a> -->
+      </grid-item>
+      <grid-item class="figure1 gallerybox">
+         <img class="figure-img" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/All-in-One_Package.png?17269550795449176410" alt="a dog">
+      </grid-item>
+    </main>
+
+
+
+
+{% schema %}
+  {
+    "name": "GalleryText",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "GalleryText",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

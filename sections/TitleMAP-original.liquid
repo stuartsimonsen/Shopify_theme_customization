@@ -1,0 +1,129 @@
+<style>
+  .sizeImg{
+   	position: relative;
+    display: table;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+  }
+  
+</style>
+
+
+<div class="page-width rich-text">
+  <div class="grid">
+    <div class="grid__item {% unless section.settings.full_width %} medium-up--two-thirds medium-up--push-one-sixth{% endunless %}">
+      {% if section.settings.section_title != blank %}
+        <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+          <h2 class="h3 sectionHeader">{{ section.settings.section_title | escape }}</h2>
+        </div>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <p class="text-center">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+
+    </div>
+  </div>
+  
+     <div class="customcenter"style="margin:25px 0px;">
+          <a style="color:#d4143d!important;" href="/products/newpawTrails">
+            <div class="btn" id="call-to-action">
+              Buy Now
+            </div>
+          </a>
+    </div>
+</div>
+
+
+<div class="page-width">
+      <div class="sizeImg hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}  ratio-container lazyload js"
+           {% if section.settings.image %}
+           data-bgset="{% include 'bgset', image: section.settings.image %}"
+           data-sizes="auto"
+           data-parent-fit="contain"
+           style="background-position: {{ section.settings.alignment }};background-size:contain; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+           {% endif %}>
+        {% if section.settings.image == blank %}
+          <div class="placeholder-background">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+</div>
+
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+
+{% schema %}
+  {
+    "name": "Image Block with Title",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Coverage & Size Guide"
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text Size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "PawTrails Smart Collar Can be used accross different European countries"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Image Block with title",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

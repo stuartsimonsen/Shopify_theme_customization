@@ -1,0 +1,162 @@
+
+<style>
+  
+  .appHeaderalign{
+    text-align:right!important; 
+    color:#ffffff!important;
+  }
+  
+	
+  #newPawtrails{
+   margin-top:1em; 
+  }
+
+/**new added css styles**/
+
+  .hero-image {
+  	position: relative;
+    margin-top:4.3em; /**to move the image under the nav**/
+}
+
+.hero-text {
+  text-align: right;
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  width:50%;  /***to contain the text and buttons**/
+  transform: translate(-50%, -50%);
+  color: white;
+}
+  
+.floating-mockup{
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  right: unset;
+  width: unset;
+  }
+  
+  
+  /***Floating mockup image**/
+  
+  @media screen and (max-width: 749px) {
+    .floating-mockup{
+      display:none!important; 
+    }
+  }
+	
+  .mega-title{
+  	color:#ffffff!important;
+
+  }
+  
+   /****media breakpoints for app header text display*****/
+    @media screen and (max-width: 1000px) {
+      .newPawtrails{
+		margin-top:10em!important;
+      }
+      .titleinmobile{
+       	font-size:1.4em!important;
+      }
+      
+      	.appHeaderalign{
+     		margin-top:7em; 
+    	}
+    }
+  
+  	  @media screen and (max-width: 705px) {
+      	.appHeaderalign{
+     		margin-top:4em!important; 
+    	}
+        .hero-text {
+        	width:55%;
+        }
+     }
+  	
+    @media screen and (max-width: 650px) {
+      .titleinmobile,#newPawtrails{
+       	font-size:1.2em!important;
+        margin-right:1.3em!important;
+      }
+		.storebutton{
+         width:150px; 
+        }
+      
+       #appLastsection{
+         margin-top:2em!important; 
+       }
+
+    }
+  
+ 
+  
+  .buttonDiv{
+   	display:inline!important; 
+    width:150%;
+  }
+   
+  .storebutton{
+     display: inline-block;
+  }
+ 	
+   .rwd-break{
+      display:none; 
+     }
+  /**test for image only one line of text**/
+   @media screen and (max-width: 550px) {
+    .disappear_mobile{
+     display:none!important;
+    }
+    
+  	.appHeaderalign{
+      margin-top:2em!important;
+    }
+     
+     .rwd-break{
+       display:block!important; 
+     }
+     
+   } 
+    
+  
+</style>
+
+<body>
+<div class="hero-image ">
+ 
+ <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/Headers_App_ST.png?17663623824426317174" style="width: 100%;"> 
+  
+  <div class="hero-text">
+      <div class="appHeaderalign">
+       
+      	<p id="newPawtrails" style="color:#ffffff;font-size:18px;">The New <br class="rwd-break">PawTrails</p>
+        <h2 class="h1 mega-title titleinmobile disappear_mobile">Easy to use PawTrails App</h2>
+        <h2 class="h1 mega-title titleinmobile disappear_mobile">To keep you connected to your pet</h2>
+		
+        <div class="buttonDiv disappear_mobile">
+           <a href="https://itunes.apple.com/ie/app/pawtrails/id1321502523?mt=8">
+            <img class="storebutton" src="https://cdn.shopify.com/s/files/1/2590/2182/files/App_Store_Badge.svg?5081446454039413751" alt="Apple download">
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.attitudetech.pawtrails&hl=en">
+              <img class="storebutton" src="https://cdn.shopify.com/s/files/1/2590/2182/files/Google_Play_Badge.svg?8188431281916708312" alt="google download">
+          </a>
+        </div>
+        
+     </div>
+  </div>
+	
+<!--floating app mock up-->
+  <div class="floating-mockup">
+        <img src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/app_header_mockup.svg?10614557402208673133">
+  </div>
+  
+</div>
+
+  
+ 
+
+  
+   
+ 
+

@@ -1,0 +1,165 @@
+<div class="page-width rich-text">
+  <div class="grid">
+    <div class="grid__item {% unless section.settings.full_width %} medium-up--two-thirds medium-up--push-one-sixth{% endunless %}">
+      {% if section.settings.section_title != blank %}
+        <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+          <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+<div class="page-width feature-row">
+  {% capture image_layout %}
+    <div class="feature-row__item">
+      {% if section.settings.image != blank %}
+        {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
+        {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
+        {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {% include 'image-style' with image: section.settings.image, width: 545, height: 545, small_style: true, wrapper_id: wrapper_id, img_id: img_id %}
+        <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
+          <div style="padding-top:100%;">
+            <img id="{{ img_id }}"
+                 class="feature-row__image lazyload"
+                 src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/harness_71cca8af-3cf8-4da4-8179-41eb5ba17c2e.png?15838997011742396308"
+
+                 alt="{{ section.settings.image.alt | escape }}">
+          </div>
+        </div>
+
+        <noscript>
+          {{ section.settings.image | img_url: '600x600', scale: 2 | img_tag: section.settings.image.alt, 'feature-row__image' }}
+        </noscript>
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+    <table id="techspecstable" width="100%">
+        <tbody>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">Brand</td>
+        <td class="contentcolor" style="width: 70.587%;">PawTrails</td>
+        </tr>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">Tracking Unit<br />Dimensions</td>
+        <td class="contentcolor" style="width: 70.587%;">Diameter: 4.4 cm<br />Height: 1.5 cm</td>
+        </tr>
+      
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">PawTrails App</td>
+        <td class="contentcolor" style="width: 70.587%;">
+ 
+          Free to download<br/>Available in App Store and Google Play Store
+        </td>
+        </tr>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">Connectivity</td>
+        <td class="contentcolor" style="width: 70.587%;">
+       
+          Cellular Connection<br/>1 x M2M Sim Card (integrated)<br>1 x GPS Model<br>1 x 3D Sensor
+          
+        </td>
+        </tr>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">App Connection</td>
+        <td class="contentcolor" style="width: 70.587%;">Connect to your PawTrails App by <br />scanning the QR code on the back of the PawTrails device</td>
+        </tr>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">Battery Life</td>
+        <td class="contentcolor" style="width: 70.587%;">Up to 3 days depending on usage</td>
+        </tr>
+        <tr>
+        <td class="tdcolor" style="width: 25.413%;">Availability</td>
+        <td class="contentcolor" style="width: 70.587%;">Across the UK and Europe</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Tech Specs",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+          "type": "text",
+          "id": "section_title",
+          "label": "Heading",
+          "default": "Talk about your brand"
+        },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "tech specs"
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text Size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      }
+
+
+
+    ],
+    "presets": [
+      {
+        "name": "tech specs",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

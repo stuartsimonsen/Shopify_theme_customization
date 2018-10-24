@@ -1,0 +1,197 @@
+
+<style>
+* {
+margin: 0;
+padding: 0;
+}
+
+[type=radio] {
+display: none;
+}
+
+#slider {
+height:27vw;
+/* width: 20vw; */
+position: relative;
+perspective: 1000px;
+transform-style: preserve-3d;
+}
+
+#slider label {
+margin: auto;
+width: 25%;
+height: 100%;
+/* padding-top: 10%; */
+/* border-radius: 28px; */
+position: absolute;
+left: 0; right: 0;
+cursor: pointer;
+transition: transform 0.4s ease;
+}
+
+#slider label, img{
+max-height:100%; max-width:100%;
+}
+
+
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+/* box-shadow: 0 1px 4px 0 rgba(0,0,0,.37); */
+transform: translate3d(-180%,0,-350px);
+}
+
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+/* box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2); */
+transform: translate3d(-90%,0,-200px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+/* box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19); */
+transform: translate3d(0,0,0);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+/* box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2); */
+transform: translate3d(90%,0,-200px);
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+/* box-shadow: 0 1px 4px 0 rgba(0,0,0,.37); */
+transform: translate3d(180%,0,-350px);
+}
+
+
+#slide1 { background-image: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/screen_4.svg?2200031971368585904');
+  background-size: contain;
+  background-position:center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#slide2 { background-image: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/screen_3.svg?2200031971368585904');
+  background-size: contain;
+  background-position:center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat; }
+#slide3 { background-image: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/screen_5.svg?2200031971368585904');
+  background-size: contain;
+  background-position:center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;}
+#slide4 {  background-image: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/screen_2.svg?2200031971368585904');
+  background-size: contain;
+  background-position:center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;}
+#slide5 { background-image: url('https://cdn.shopify.com/s/files/1/0007/0615/0436/files/screen_1.svg?2200031971368585904');
+  background-size: contain;
+  background-position:center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;}
+
+  
+
+  
+</style>
+
+<div class="page-width rich-text">
+    <div class="grid">
+        <div class="grid__item {% unless section.settings.full_width %} medium-up--two-thirds medium-up--push-one-sixth{% endunless %}">
+            {% if section.settings.section_title != blank %}
+                <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+                    <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+                </div>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-center">{{ section.settings.text }}</div>
+            {% endif %}
+        </div>
+    </div>
+  	  
+  		<div class="customcenter" style="margin:45px 0px;">
+          <a style="color:#d4143d!important;" href="/products/newpawTrails">
+            <div class="btn" id="call-to-action">
+              Buy Now
+            </div>
+          </a>
+          <div class="Undertext">
+            <a href="/pages/pawtrails-app"><p style="color:#696969!important;">or</p> Learn more about the PawTrails App</a>
+          </div>
+     	</div>	
+  
+  	 <section id="slider">
+      <input type="radio" name="slider" id="s1">
+      <input type="radio" name="slider" id="s2">
+      <input type="radio" name="slider" id="s3" checked>
+      <input type="radio" name="slider" id="s4">
+      <input type="radio" name="slider" id="s5">
+      <label for="s1" id="slide1"></label>
+      <label for="s2" id="slide2"></label>
+      <label for="s3" id="slide3"></label>
+      <label for="s4" id="slide4"></label>
+      <label for="s5" id="slide5"></label>
+    </section>
+</div>
+
+ 
+
+
+
+
+{% schema %}
+{ "name": "The PawTrails App", 
+    "class": "index-section", 
+    "settings": 
+    [ 
+        { "type": "checkbox", 
+          "id": "full_width",
+          "label": "Wide display"
+        }, 
+        { "type": "text", 
+          "id": "section_title", 
+          "label": "Heading", 
+          "default": "The PawTrails App" 
+        },
+        { "type": "richtext", 
+          "id": "text",
+          "label": "Text", 
+          "default": "<p>PawTrails app is FREE to download on your smartphone.Simple and easy to use with step by step guides.</p>" 
+        },
+        
+        { "type": "select", "id": "text_size", 
+          "label": "Size", "default": "medium", 
+          "options": [ 
+                          { "label": "Small", "value": "small" }, 
+                          { "label": "Medium", "value": "medium" }, 
+                          { "label": "Large", "value": "large" } 
+                      ] 
+        } 
+    ],
+    "presets": [ 
+        { "name": "Rich text with button",  "category": "Text" }
+        ] 
+    }
+{% endschema %}

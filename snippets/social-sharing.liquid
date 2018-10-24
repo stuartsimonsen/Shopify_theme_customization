@@ -1,0 +1,49 @@
+<!-- /snippets/social-sharing.liquid -->
+
+
+<!-- Changed by Ziyun for different social icons-->
+
+<div class="social-sharing">
+
+  {% if settings.share_facebook %}
+    <a target="_blank" href="https://www.facebook.com/thepawtrails/" class="btn btn--small btn--secondary btn--share share-facebook" title="{{ 'general.social.alt_text.share_on_facebook' | t }}">
+      {% include 'icon-facebook' %}
+      
+      {% comment %}
+      Original icon text, changed by Ziyun on March 8 2018
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_facebook' | t }}</span>
+      {% endcomment %}
+      
+      
+      <span class="share-title" aria-hidden="true">Facebook</span>    
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
+    </a>
+  {% endif %}
+
+  {% if settings.share_twitter %}
+    <a target="_blank" href="https://www.instagram.com/pawtrails_smartcollar/" class="btn btn--small btn--secondary btn--share share-twitter" title="{{ 'general.social.alt_text.share_on_twitter' | t }}">
+      {% include 'icon-instagram' %}
+      
+       {% comment %}
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_instagram' | t }}</span>
+       {% endcomment %}
+      
+       <span class="share-title" aria-hidden="true">Instagram</span>    
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_instagram' | t }}</span>
+    </a>
+  {% endif %}
+
+  {% if settings.share_pinterest %}
+    <a target="_blank" href="//youtube.com//watch?v=8PKgMZPBR88" class="btn btn--small btn--secondary btn--share share-pinterest" title="{{ 'general.social.alt_text.share_on_pinterest' | t }}">
+      {% include 'icon-youtube' %}
+      
+       {% comment %}
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_youtube' | t }}</span>
+       {% endcomment %}
+      
+       <span class="share-title" aria-hidden="true">Youtube</span>    
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_youtube' | t }}</span>
+    </a>
+  {% endif %}
+
+</div>

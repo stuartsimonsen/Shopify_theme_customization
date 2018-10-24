@@ -1,0 +1,196 @@
+<style>
+  .appHeaderalign{
+    text-align:right!important; 
+    color:#ffffff!important;
+  }
+  
+  
+   @media only screen and (max-width: 989px){
+    #appSmallScreen {
+         background-size: cover!important;
+/*       	 height:400px; */
+    }
+  }
+  
+  .appTextcolor{
+    color:#ffffff!important; 
+  }
+  
+ 
+  
+</style>
+
+
+<div id="appSmallScreen" class="custom-hero hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+     {% if section.settings.image %}
+     data-bgset="{% include 'bgset', image: section.settings.image %}"
+     data-sizes="auto"
+     data-parent-fit="cover"
+     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+     {% endif %}>
+  {% if section.settings.image == blank %}
+    <div class="placeholder-background">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {% endif %}
+  <div class="hero__inner">
+    <div class="page-width appHeaderalign">
+       
+      <p style="color:#ffffff;font-size:18px;">The New PawTrails</p>
+      {% if section.settings.title != blank %}
+        <h2 class="h1 mega-title appTextcolor{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+      {% if section.settings.title2 != blank %}
+        <h2 class="h1 mega-title appTextcolor{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title2 | escape }}</h2>
+      {% endif %}
+    
+     
+      <p class="clearfix"></p>
+
+     
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="">
+          <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/App_Store_Badge.svg?5081446454039413751" alt="Apple download">
+        </a>
+      {% endif %}
+      {% if section.settings.button_label_two != blank and section.settings.button_link_two != blank %}
+          <a href="{{ section.settings.button_link2 }}" class="">
+            <img src="https://cdn.shopify.com/s/files/1/2590/2182/files/Google_Play_Badge.svg?8188431281916708312" alt="google download">
+          </a>
+      {% endif %}
+
+    </div>
+  </div>
+  
+    <div class="floating-mockup"> 
+       <img style="height:500px;" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/spotDOG.png?2370546342377362363"> 
+  </div>
+  
+</div>
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+{% schema %}
+  {
+    "name": "App new Header",
+    "class": "index-section index-section--flush",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Image alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Fully Optimised PawTrails App"
+      },
+      {
+        "type": "text",
+        "id": "title2",
+        "label": "Second Heading",
+        "default": "Connected All the Time"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Paw Trails Smart Collar/Harness and App<br>Puts you in control of your pet</p>"
+      },
+      {
+        "type": "select",
+        "id": "hero_size",
+        "label": "Section height",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Extra Small",
+            "value": "x-small"
+          },
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          },
+          {
+            "label": "Extra Large",
+            "value": "x-large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      },
+   
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "button_label_two",
+        "label": "Second button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link_two",
+        "label": "Second button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "App new Header",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

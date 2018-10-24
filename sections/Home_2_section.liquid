@@ -1,0 +1,238 @@
+  <style>
+  /* grid styles ------------------------------------ */
+  @media (min-width: 600px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+     
+    }
+
+    .text_on_left {
+       grid-column: span 2;
+       grid-row: span 2;
+       order:1; 
+
+    }
+
+    .homefigure {
+      grid-column: span 2;
+      grid-row: span 2;
+       order:2; 
+    }
+  }
+ 
+/**To make the text and image in the center of a div***/
+.homebox{
+   display: flex;            /* new */
+  align-items: center;      /* new */
+  justify-content: center;  /* new */
+}
+    
+.figure-img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.text_on_left{
+padding: 40px;
+background-color: #d4143d;
+color: white;
+}
+    
+ 
+.boxcontent{
+   vertical-align:center!important;/**to place text in the center of a div**/
+}
+
+    .newPawtrailstitle{
+      font-family: Montserrat;
+      font-size: 2em;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.32;
+      letter-spacing: -1.2px;
+      color: #ffffff;
+    }
+    
+    .newPawtrailstext{
+      font-family: Montserrat;
+      font-size: 1.2em;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.44;
+      letter-spacing: normal;
+      color: #ffffff;
+    }
+    
+    .priceText{
+      font-size: 2em;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.44;
+      letter-spacing: normal;
+      color: #ffffff; 
+    }
+    
+    .serviceText, .e_booktext{
+      font-size: 0.9em;
+      color:#ffffff;
+    }
+	
+    .e_booktext{
+     text-decoration:underline; 
+    }
+ 	
+    .home_btn{
+      width: 198px;
+  	  height: 40px;
+      border-radius: 50px;
+      background-color: #d4143d;
+      border: solid 2px #ffffff; 
+    }
+    
+      #home_btn1, #home_btn2{
+		color:#ffffff;
+      }
+    
+      #home_btn1{
+		margin-right:1em;
+       
+      }
+    
+    #home_top{
+    	margin-top:2em;
+    }
+    
+    #home_btn_section{
+     	margin-top:1em; 
+    }
+    
+    /***Style on Mobile****/
+     @media (max-width: 900px) {
+      .newPawtrailstitle, .priceText{
+		 font-size: 1.5em;
+      }
+       .newPawtrailstext{
+         font-size: 0.9em;
+       }
+   
+       .serviceText, .e_booktext{
+         font-size: 0.6em;
+       }
+       
+        #home_top{
+    		margin-top:3em;
+          	padding-top:1em;
+    	}
+      	#home_btn1, #home_btn2{
+          width:160px;
+          height:37px;
+          font-size:11px;
+        }
+     }
+    
+    /***second button top space in mobile **/
+      @media (max-width: 415px) {
+        #home_btn2{
+         margin-top:1em; 
+        }
+      }
+    
+    
+  </style>
+
+      <main id="home_top">
+      <grid-item class="homefigure homebox">
+        <img class="figure-img" src="https://cdn.shopify.com/s/files/1/0007/0615/0436/files/home_2IMG.png?8055108019449081572"  alt="Home girl with dog">
+      </grid-item>
+      
+      <grid-item class="text_on_left homebox">
+        <div class="boxcontent">
+          <p class="newPawtrailstext">The New PawTrails</p>
+          <p class="newPawtrailstitle">GPS Smart Collar & Harness</p>
+          <p class="newPawtrailstitle">All in One Solution </p>
+  
+          <span class="priceText" wg-notranslate="manual" doubly-currency-eur="7999" doubly-currency-gbp="7499.01105173396" doubly-currency="EUR">€79.99</span>
+          <a class="serviceText" href="/pages/service-fee">+ service fee</a>
+<!--           <p><a class="e_booktext">Download E-Book for more information</a></p> -->
+          
+          <div id="home_btn_section">
+ 			<a href="/products/newpawTrails">
+              <div class="btn home_btn" id="home_btn1">
+                Buy Now
+              </div>
+            </a>
+            
+            <a href="/pages/retailer-demo">
+              <div class="btn home_btn retailerBtn" id="home_btn2">
+                Become a Retailer
+              </div>
+            </a>
+          </div>	
+ 		</div>
+      </grid-item>
+    </main>
+
+
+{% schema %}
+  {
+    "name": "Home-2-section",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "GalleryText",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
